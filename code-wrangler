@@ -1,0 +1,16 @@
+parse-as-csv :body '\t' false
+drop body
+set columns square_id,time_interval,country_code,sms_in,sms_out,call_in,call_out,internet_traffic
+fill-null-or-empty :sms_in '0'
+fill-null-or-empty :sms_out '0'
+fill-null-or-empty :call_in '0'
+fill-null-or-empty :call_out '0'
+fill-null-or-empty :internet_traffic '0'
+fill-null-or-empty :country_code '0'
+set-type :time_interval long
+set-type :country_code integer
+set-type :sms_in float
+set-type :sms_out float
+set-type :call_in float
+set-type :call_out float
+set-type :internet_traffic float
